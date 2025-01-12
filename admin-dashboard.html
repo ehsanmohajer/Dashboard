@@ -1,0 +1,83 @@
+<!-- admin-dashboard.html page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="./dist/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gradient-to-b from-gray-800 to-gray-900 text-white flex flex-col">
+            <div class="p-6 text-center font-bold text-xl border-b border-gray-700">Admin Dashboard</div>
+            <nav class="flex-1">
+                <ul>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Home</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Users</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Projects</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Requests</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Tasks</a></li>
+                </ul>
+            </nav>
+            <footer class="p-4 text-sm border-t border-gray-700">&copy; 2025 Project Management</footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <header class="bg-gradient-to-r from-gray-700 via-gray-800 to-black shadow p-4 flex justify-between items-center text-white">
+                <div class="flex items-center">
+                    <img src="assets/images/userPic.jpg" alt="Profile" class="rounded-full mr-4" id="profile-pic">
+                    <span id="welcome-message" class="text-xl font-semibold">Welcome Admin</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- <button class="p-2 rounded bg-gray-200 text-gray-800">Toggle Theme</button> -->
+                    <button class="p-2 bg-red-500 text-white rounded" id="logout">Logout</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-6 flex-1 bg-gray-100">
+                <h1 class="text-3xl font-bold mb-4">Dashboard</h1>
+
+                <!-- Statistics -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded shadow">
+                        <h2 class="text-lg font-semibold">Users</h2>
+                        <p class="text-2xl">123</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h2 class="text-lg font-semibold">Projects</h2>
+                        <p class="text-2xl">45</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h2 class="text-lg font-semibold">Requests</h2>
+                        <p class="text-2xl">12</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h2 class="text-lg font-semibold">Tasks</h2>
+                        <p class="text-2xl">8</p>
+                    </div>
+                </div>
+
+                <!-- Pinned Notes -->
+                <div class="bg-yellow-100 p-4 rounded shadow mb-6">
+                    <h2 class="text-lg font-semibold">Pinned Notes</h2>
+                    <ul>
+                        <li class="mb-2">Complete user approvals</li>
+                        <li>Review pending project requests</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/admin.js"></script>
+    
+</body>
+</html>

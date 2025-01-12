@@ -1,0 +1,111 @@
+<!-- employer-dashboard.html page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="./dist/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-gray-900" id="theme-body">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gradient-to-b from-gray-800 to-gray-900 text-white flex flex-col">
+            <div class="p-6 text-center font-bold text-xl border-b border-gray-700">Employer Dashboard</div>
+            <nav class="flex-1">
+                <ul>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Home</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Users</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Projects</a></li>
+                    <li><a href="#" class="block p-4 hover:bg-gray-700">Requests</a></li>
+                </ul>
+            </nav>
+            <footer class="p-4 text-sm border-t border-gray-700">&copy; 2025 Project Management</footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <header class="bg-gradient-to-r from-purple-700 via-pink-700 to-red-700 shadow p-4 flex justify-between items-center text-white">
+                <div class="flex items-center">
+                    <img src="assets/images/userPic.jpg" alt="Profile" class="rounded-full mr-4" id="profile-pic">
+                    <span id="welcome-message" class="text-xl font-semibold">Welcome Employer</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- <button class="p-2 rounded bg-gray-200 text-gray-800" id="toggle-theme">Toggle Theme</button> -->
+                    <button class="p-2 rounded bg-gray-200 text-gray-800">Help</button>
+                    <button class="p-2 bg-red-500 text-white rounded" id="logout">Logout</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-6 flex-1 bg-gray-100">
+                <h1 class="text-3xl font-bold mb-4">Dashboard</h1>
+
+                <!-- Projects Table -->
+                <div class="mb-6">
+                    <button id="define-project-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mb-4">Define Project</button>
+
+                    <!-- Define Project Form (Initially Hidden) -->
+                    <form id="define-project-form" class="hidden bg-white shadow rounded-lg p-4 mb-6">
+                        <h2 class="text-lg font-bold mb-4">Define a New Project</h2>
+                        <div class="mb-4">
+                            <label for="project-title" class="block text-sm font-medium text-gray-700">Project Title</label>
+                            <input type="text" id="project-title" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="Enter project title" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="project-category" class="block text-sm font-medium text-gray-700">Project Category</label>
+                            <select id="project-category" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300">
+                                <option value="Programming">Programming</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Designing">Designing</option>
+                                <option value="BrainStorming">BrainStorming</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="project-budget" class="block text-sm font-medium text-gray-700">Project Budget</label>
+                            <input type="number" id="project-budget" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="Enter project budget" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="project-deadline" class="block text-sm font-medium text-gray-700">Project Deadline</label>
+                            <input type="date" id="project-deadline" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="project-situation" class="block text-sm font-medium text-gray-700">Project Situation</label>
+                            <select id="project-situation" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300">
+                                <option value="Open">Open</option>
+                                <option value="Close">Close</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Submit</button>
+                        <button type="button" id="cancel-project-btn" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ml-2">Cancel</button>
+                    </form>
+                    <table id="projects-table" class="table-auto w-full bg-white shadow rounded-lg">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="px-4 py-2">Title</th>
+                                <th class="px-4 py-2">Category</th>
+                                <th class="px-4 py-2">Budget</th>
+                                <th class="px-4 py-2">Deadline</th>
+                                <th class="px-4 py-2">Trainees</th>
+                                <th class="px-4 py-2">Situation</th>
+                                <th class="px-4 py-2">Operation</th>
+                                <th class="px-4 py-2">Requests</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- New rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/employer.js"></script>
+
+</body>
+</html>
